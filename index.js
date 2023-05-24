@@ -11,7 +11,7 @@ searchBtn.addEventListener("click", async function() {
 if (searchField.value) {
     let watchlist = []
     movieList.innerHTML = '';
-    const res = await fetch(`http://www.omdbapi.com/?apikey=7cb4bb87&s=${searchField.value}`);
+    const res = await fetch(`https://www.omdbapi.com/?apikey=7cb4bb87&s=${searchField.value}`);
     const data = await res.json();
     
     data.Search.forEach(movie => {
@@ -21,7 +21,7 @@ if (searchField.value) {
     for (let i = 0; i < watchlist.length; i++) {
         const movie = watchlist[i];
         
-        fetch(`http://www.omdbapi.com/?apikey=7cb4bb87&i=${movie}`)
+        fetch(`httsp://www.omdbapi.com/?apikey=7cb4bb87&i=${movie}`)
             .then(response => response.json())
             .then(data => {
                 movieList.innerHTML += `
