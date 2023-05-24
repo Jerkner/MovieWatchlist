@@ -1,5 +1,6 @@
 const searchBtn = document.getElementById("searchBtn");
 const movieList = document.getElementById("movieList");
+const searchField = document.getElementById("searchField");
 let watchlist = []
 
 if (localStorage.getItem("watchlist")) {
@@ -59,6 +60,12 @@ function addToWatchlist(addId) {
         console.log(watchlist);
     }
 }
+document.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      document.getElementById("searchBtn").click();
+    }
+  });
 
 document.addEventListener('click', function(e){
     if (e.target.dataset.add){addToWatchlist(e.target.dataset.add)}
