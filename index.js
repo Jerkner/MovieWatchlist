@@ -21,7 +21,7 @@ if (searchField.value) {
     for (let i = 0; i < watchlist.length; i++) {
         const movie = watchlist[i];
         
-        fetch(`httsp://www.omdbapi.com/?apikey=7cb4bb87&i=${movie}`)
+        fetch(`https://www.omdbapi.com/?apikey=7cb4bb87&i=${movie}`)
             .then(response => response.json())
             .then(data => {
                 movieList.innerHTML += `
